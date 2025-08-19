@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nir Segal — Academic Website</title>
+  <style>
+    body { 
+      margin: 40px; 
+      font-family: serif; 
+      background: #fff; 
+      color: #000; 
+      line-height: 1.5; 
+    }
+    a { color: inherit; text-decoration: underline; }
+    a:hover { text-decoration: none; }
+
+    h1 { font-size: 1.8rem; margin-bottom: 0.2em; }
+    p { margin: 0.4em 0; }
+
+    .container { display: flex; gap: 60px; }
+    .section { max-width: 350px; }
+
+    footer { margin-top: 60px; font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Nir Segal</h1>
+
+  <div class="container">
+    <div class="section">
+      <h2>About</h2>
+      <p>I am a PhD student at 
+        <a href="https://www.umass.edu/linguistics/" target="_blank">the Linguistics Department of the University of Massachusetts Amherst</a>. <br>
+        Before this, I studied Linguistics at the Hebrew University of Jerusalem, where I worked mainly with 
+        <a href="https://lukacrnic.com/" target="_blank">Prof. Luka Crnič</a> and with 
+        <a href="https://www.grodzinskylab.com/" target="_blank">Prof. Yosef Grodzinsky</a> at the Neurolinguistics Lab. <br>
+        My main interest is formal semantics and its interaction with syntax, pragmatics, psycholinguistics, and the philosophy of language.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p><a href="mailto:nirsegal@umass.edu">nirsegal@umass.edu</a></p>
+      <p>N408 Integrative Learning Center<br>
+         650 North Pleasant Street<br>
+         Amherst, MA 01003</p>
+    </div>
+  </div>
+
+  <footer>
+    Last updated: <span id="updated"></span>
+  </footer>
+
+  <script>
+    document.getElementById('updated').textContent = new Date().toISOString().slice(0,10);
+  </script>
+</body>
+</html>
