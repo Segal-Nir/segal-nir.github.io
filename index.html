@@ -2,26 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nir Segal — Academic Website</title>
+  <link href='https://fonts.googleapis.com/css?family=DM+sans' rel='stylesheet' type='text/css'>
   <style>
     body { 
       margin: 40px; 
-      font-family: serif; 
+      font-family: 'DM Sans', sans-serif; 
       background: #fff; 
       color: #000; 
-      line-height: 1.5; 
+      line-height: 2; 
     }
-    a { color: inherit; text-decoration: underline; }
-    a:hover { text-decoration: none; }
 
-    h1 { font-size: 1.8rem; margin-bottom: 0.2em; }
-    p { margin: 0.4em 0; }
+    a { 
+      color: inherit; 
+      text-decoration: underline; 
+    }
+    a:hover { 
+      text-decoration: none; 
+    }
 
-    .container { display: flex; gap: 60px; }
-    .section { max-width: 350px; }
+    h1 { 
+      font-size: 1.8rem; 
+      margin-bottom: 0.2em; 
+    }
 
-    footer { margin-top: 60px; font-size: 0.9rem; color: #555; }
+    p { 
+      margin: 0.4em 0; 
+      text-align: justify;       /* Justify text */
+      text-justify: inter-word;  /* Smooth spacing between words */
+      hyphens: auto;             /* Allow hyphenation for long words */
+    }
+
+    .container { 
+      display: flex; 
+      gap: 60px; 
+      flex-wrap: wrap; /* Make it responsive on small screens */
+    }
+
+    .section { 
+      max-width: 350px; 
+      flex: 1 1 300px;
+    }
+
+    footer { 
+      margin-top: 60px; 
+      font-size: 0.9rem; 
+      color: #555; 
+      padding: 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -30,7 +65,8 @@
   <div class="container">
     <div class="section">
       <h2>About</h2>
-      <p>I am a PhD student at 
+      <p>
+        I am a PhD student at 
         <a href="https://www.umass.edu/linguistics/" target="_blank">the Linguistics Department of the University of Massachusetts Amherst</a>. <br>
         Before this, I studied Linguistics at the Hebrew University of Jerusalem, where I worked mainly with 
         <a href="https://lukacrnic.com/" target="_blank">Prof. Luka Crnič</a> and with 
@@ -42,9 +78,11 @@
     <div class="section">
       <h2>Contact</h2>
       <p><a href="mailto:nirsegal@umass.edu">nirsegal@umass.edu</a></p>
-      <p>N408 Integrative Learning Center<br>
-         650 North Pleasant Street<br>
-         Amherst, MA 01003</p>
+      <p>
+        N408 Integrative Learning Center<br>
+        650 North Pleasant Street<br>
+        Amherst, MA 01003
+      </p>
     </div>
   </div>
 
