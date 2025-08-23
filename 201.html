@@ -32,10 +32,18 @@
       .collapsible-content { max-height: none; overflow: hidden; transition: max-height 0.3s ease; }
       .collapsible-content.collapsed { max-height: 0; padding: 0; margin: 0; }
 
-      /* Contact section */
-      .contact-section { display: grid; gap: 8px; padding: 0; box-sizing: border-box; max-width: 500px; margin-bottom: 20px; }
-      .contact-row { display: grid; grid-template-columns: max-content 1fr; gap: 10px; align-items: start; }
-      .contact-label { font-weight: bold; white-space: nowrap; }
+      /* Contact section (simplified 2-column grid) */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        column-gap: 10px;
+        row-gap: 6px;
+        max-width: 650px;
+        margin-bottom: 20px;
+        align-items: start;
+      }
+      .contact-grid .label { font-weight: bold; white-space: nowrap; }
+      .contact-grid .content { min-width: 0; }
 
       @media (max-width: 700px) {
         body { margin: 2% 3%; }
@@ -52,34 +60,33 @@
     <h3 class="remove">How Language Works: Introduction to Linguistic Theory</h3>
     <h4>Sections AA &amp; AF, Fall 2025</h4>
 
-    <!-- Contact Info -->
-    <div class="contact-section">
-      <div class="contact-row">
-        <span class="contact-label">TA:</span>
-        <span>
-          Nir Segal 💬 
-          <strong class="email-link">
-            <script type="text/javascript">
-              document.write(String.fromCharCode(
-                60,97,32,104,114,101,102,61,34,
-                109,97,105,108,116,111,58,
-                110,105,114,115,101,103,97,108,
-                64,117,109,97,115,115,46,101,100,117,
-                34,62,
-                110,105,114,115,101,103,97,108,
-                64,117,109,97,115,115,46,101,100,117,
-                60,47,97,62
-              ));
-            </script>
-          </strong>
-        </span>
+    <!-- Contact Info (simplified two-column grid) -->
+    <div class="contact-grid">
+      <div class="label">TA:</div>
+      <div class="content">Nir Segal (he/him)</div>
+
+      <div class="label"></div>
+      <div class="content">
+        💬 <strong class="email-link">
+          <script type="text/javascript">
+            document.write(String.fromCharCode(
+              60,97,32,104,114,101,102,61,34,
+              109,97,105,108,116,111,58,
+              110,105,114,115,101,103,97,108,
+              64,117,109,97,115,115,46,101,100,117,
+              34,62,
+              110,105,114,115,101,103,97,108,
+              64,117,109,97,115,115,46,101,100,117,
+              60,47,97,62
+            ));
+          </script>
+        </strong>
       </div>
-      <div class="contact-row">
-        <span class="contact-label">Office Hours:</span>
-        <span>
-          🕳️ <a href=https://maps.app.goo.gl/GUCnybay78UjvG92A" target="_blank">Integrative Learning Center</a>, office N421C <br>
-          🎯 Tuesday 10:00–11:00 AM; Thursday 10:00–11:00 AM
-        </span>
+
+      <div class="label">Office Hours:</div>
+      <div class="content">
+        🕳️ <a href="https://maps.app.goo.gl/GUCnybay78UjvG92A" target="_blank">Integrative Learning Center</a>, office N421C<br>
+        🎯 Tuesday 10:00–11:00 AM; Thursday 10:00–11:00 AM
       </div>
     </div>
 
@@ -90,12 +97,13 @@
         <div id="news-content" class="collapsible-content">
           <ul class="news">
             <li><span class="bullet">🚨</span><em>Reminder:</em><br>
-            Section AA meets on Fridays, 1:25–2:15 PM @<a href="https://maps.app.goo.gl/LFaB6oYG3JpEx92R7" target="_blank">Hasbrouck Lab</a>, Room 230<br>
-        Section AF meets on Fridays,12:20-1:10 PM @<a href="https://maps.app.goo.gl/LFaB6oYG3JpEx92R7" target="_blank">Hasbrouck Lab</a>, Room 242<br>
-        Lectures are Mondays & Wednesdays 1:25-2:15 PM
+              Section AA meets on Fridays, 1:25–2:15 PM @<a href="https://maps.app.goo.gl/LFaB6oYG3JpEx92R7" target="_blank">Hasbrouck Lab</a>, Room 230<br>
+              Section AF meets on Fridays,12:20-1:10 PM @<a href="https://maps.app.goo.gl/LFaB6oYG3JpEx92R7" target="_blank">Hasbrouck Lab</a>, Room 242<br>
+              Lectures are Mondays & Wednesdays 1:25-2:15 PM
             </li>
             <li><span class="bullet">👋</span> Welcome to Ling 201!<br>
-            This is the website for discussion sections <em>AA</em> and <em>AF</em> for the Fall '25 semester.</li>
+              This is the website for discussion sections <em>AA</em> and <em>AF</em> for the Fall '25 semester.
+            </li>
           </ul>
         </div>
       </div>
@@ -128,7 +136,7 @@
         content.classList.toggle('collapsed');
 
         // Update arrow symbol
-        if(content.classList.contains('collapsed')) {
+        if (content.classList.contains('collapsed')) {
           header.textContent = header.textContent.replace('▼','▶');
         } else {
           header.textContent = header.textContent.replace('▶','▼');
