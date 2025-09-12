@@ -86,6 +86,23 @@
         background-color: var(--box-hover);
       }
 
+      /* Scrollable news box */
+      .news-box {
+        max-height: 300px; /* Adjust as needed */
+        overflow-y: auto;
+        border-radius: 12px; /* Rounded corners */
+        padding: 10px;
+      }
+
+      /* Rounded toggle for collapsible content, highlight only on hover */
+      .news-box h3 {
+        border-radius: 12px;
+        padding: 6px 10px;
+      }
+      .news-box h3:hover {
+        background-color: var(--box-hover);
+      }
+
       @media (max-width: 700px) {
         body { margin: 2% 3%; }
         h2 { font-size: 1.8rem; }
@@ -139,6 +156,14 @@
         <h3 onclick="toggleCollapse('news-content', this)">News ▼</h3>
         <div id="news-content" class="collapsible-content">
           <ul class="news">
+            <!-- New voluntary contact list link -->
+            <li><span class="bullet">📢</span>
+              <u>Voluntary Contact List:</u><br>
+              If you’d like to connect with other students for assistance with course material, fill out this 
+              <a href="https://websites.umass.edu/nirsegal/voluntary-contact-list-linguistics-201-aa-af/" target="_blank">form</a>.
+            </li>
+
+            <!-- Existing news items -->
             <li><span class="bullet">🚨</span><u>Reminder:</u><br>
               <em>Starting <b>September 12</b>,</em><br>
               Section AA meets on Fridays, 1:25–2:15 PM @<a href="https://maps.app.goo.gl/LFaB6oYG3JpEx92R7" target="_blank">Hasbrouck Lab</a>, Room 230<br>
